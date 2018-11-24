@@ -22,7 +22,180 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="main.css" />
     <script src="main.js"></script>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      a{
+        text-decoration: none !important; 
+      }
+      h3{
+        margin:  0;
+        padding:  5px 0;
+        background-color: #333;
+        color: #ffffff;
+      }
+      h4 {
+        margin: 0;
+        padding:10px 0;
+      }
+      .btn {
+        margin: 5px;
+      }
+
+      /* Center website */
+
+      .row {
+        margin: 10px -16px;
+      }
+
+      /* Add padding BETWEEN each column */
+      .row,
+      .row > .column {
+        padding: 8px;
+      }
+
+      /* Create three equal columns that floats next to each other */
+      .column {
+        display: none; /* Hide all elements by default */
+      }
+
+      /* Clear floats after rows */
+      .row:after {
+        content: "";
+        display: table;
+        clear: both;
+      }
+
+      /* Content */
+      .content {
+        background-color: white;
+        margin: 30px 0 10px 0;
+        border: #056a92 solid 2px;
+        background-color: #ffffff;
+        border-radius: 5px;
+      }
+
+      .content hr{
+        padding: 0;
+        margin: 0;
+
+      }
+
+      .bg {
+        background-color: #3ca8d3;
+        overflow: hidden;
+        
+      }
+      
+      .status{
+        text-align: center;
+        background-color: #3ca8d3;
+        color: #ffffff;
+      }
+
+      /* The "show" class is added to the filtered elements */
+      .show {
+        display: block;
+      }
+
+      .content img {
+        opacity: 1;
+        display: block;
+        width: 100%;
+        height: auto;
+        transition: 0.5s ease;
+        backface-visibility: hidden;
+      }
     
+
+      
+
+      .content:hover img {
+        transform: scale(1.1);
+      }
+
+      .content:hover img
+       {
+        opacity: 0.5;
+      }
+
+      .middle {
+        transition: 0.5s ease;
+        opacity: 0;
+        position: absolute;
+        top: 37%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        text-align: center;
+        color: black;
+      }
+
+      .middle .glyphicon {
+        color: black;
+        font-size: 50px;
+      }
+
+      .content:hover .middle {
+        opacity: 1;
+      }
+
+      .content h3,h4{
+        font: 400 15px/1.8 Lato, sans-serif;
+        letter-spacing: 2px;
+      }
+      
+      .content h4{
+        font-size: 20px;
+      }
+
+      .bname{
+        height: auto;
+      }
+
+      .row hr{
+        display: none;
+      }
+      
+      @media (max-width: 600px) {
+        .row hr {
+          display: block;
+                 }
+      }
+
+      .content hr{
+        color: #3ca8d3;
+        display: block;
+        width: 50%; 
+       }
+
+       .modal-body h3{
+         padding: 20px;
+         font-size: 30px;
+       }
+
+      @media (max-width: 600px) {
+        .modal-body h3{
+         padding: 10px;
+         font-size: 30px;
+       }
+      }
+
+      .modal-header {
+        padding: 5px 10px;
+      }
+      .modal-body{
+        padding: 0;
+        margin: 0;
+      }
+      .modal-innerbody{
+        margin: 30px;
+      }
+
+
+      
+    </style>
   </head>
   <body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="50">
     <nav class="navbar navbar-default navbar-fixed-top">
@@ -54,123 +227,791 @@
     <div class="showcase2"><p></p></div>
 
     <!-- Container (Portfolio Section) -->
-    <div id="portfolio" class="bg">
-        <div class="container">
-          <h3 class="text-center">PROJECTS</h3>
-          <p class="text-center">
-            Here are some of our Projects
-          </p>
-
-           <!-- Grid column -->
-            <div class="col-md-12 d-flex justify-content-center mb-5 text-center">
-
-              <button type="button" class="btn btn-outline-black waves-effect filter" data-rel="all">All</button>
-              <button type="button" class="btn btn-outline-black waves-effect filter" data-rel="1">Completed</button>
-              <button type="button" class="btn btn-outline-black waves-effect filter" data-rel="2">Ongoing</button>
-  
-            </div>
-          <!-- Grid column -->
-          <br>
-          <br>
-
+    <div id="portfolio" class="">
+      <div class="container">
+        <!-- MAIN (Center website) -->
+        <div class="main ">
+          <h3 class="text-center">Projects</h3>
+          <hr style="size:10px;">  
           
-          
-          
-          <div class="row text-center">
 
+          <div id="myBtnContainer" class="text-center">
+            <button class="btn active" onclick="filterSelection('all')">
+              Show all
+            </button>
+            <button class="btn" onclick="filterSelection('completed')">
+              Completed
+            </button>
+            <button class="btn" onclick="filterSelection('ongoing')">
+              Ongoing
+            </button>
+            <button class="btn" onclick="filterSelection('upcoming')">
+              Upcoming
+            </button>
+          </div>
+          <hr>
 
+          <!-- Portfolio Gallery Grid -->
+          <div class="row">
 
-
+              <div class="col-sm-4 text-center">
+                  <div class="column completed">
+                      <a
+                      href="#tpk"
+                      data-toggle="modal"
+                      data-target="#tpk">
+                    <div class="content">
+                      <div class="bg">
+                        
+                          <div class="middle">
+                            <i class="glyphicon glyphicon-eye-open"></i>
+                          </div>
+                          <img src="img/tpk3.JPG" alt="Mountains" style="width:100%"/>
+                      </div>
+                      <div class="bname">
+                      <h4>The Palakot Residence</h4>
+                    </div>
+                      <hr>
+                      <h3>Kottarakkara</h3>
+                      <div class="status">Project Completed</div> 
+                    </div></a>
+                    <a class="btn" data-toggle="modal" data-target="#tpk">
+                      View
+                    </a>
+                  </div>
             
-              <div class="col-sm-4">
-                <div class="thumbnail">
-                  <img src="img/2.JPG" alt="Paris" width="400" height="300" />
-                  <p><strong>Budling 1</strong></p>
-                
-                  <button class="btn" data-toggle="modal" data-target="#myModal">
-                  View
-                  </button>
                 </div>
-              </div>
-          
+    
+                <hr>
 
-            <div class="col-sm-4">
-              <div class="thumbnail">
-                <img src="img/4.JPG" alt="New York" width="400" height="300" />
-                <p><strong>Building 2</strong></p>
-                
-                <button class="btn" data-toggle="modal" data-target="#myModal">
-                  View
-                </button>
-              </div>
-            </div>
-            <div class="col-sm-4">
-              <div class="thumbnail">
-                <img
-                  src="img/6.JPG"
-                  alt="San Francisco"
-                  width="400"
-                  height="300"
-                />
-                <p><strong>Bulding 3</strong></p>
-               
-                <button class="btn" data-toggle="modal" data-target="#myModal">
-                  view
-                </button>
-              </div>
-            </div>
-
+                <div class="col-sm-4 text-center">
+                  <div class="column completed">
+                      <a
+                      href="#myModal"
+                      data-toggle="modal"
+                      data-target="#myModal">
+                    <div class="content">
+                      <div class="bg">
+                        
+                          <div class="middle">
+                            <i class="glyphicon glyphicon-eye-open"></i>
+                          </div>
+                          <img src="img/2.JPG" alt="MJ Flats" style="width:100%"/>
+                      </div>
+                      <div class="bname">
+                      <h4>MJ Flats</h4>
+                    </div>
+                      <hr>
+                      <h3>Kaloor</h3>
+                      <div class="status">Project Completed</div> 
+                    </div></a>
+                    <b class="btn" data-toggle="modal" data-target="#myModal">
+                      View
+                    </b>
+                  </div>
             
+                </div>
+    
+                <hr>
+
+                <div class="col-sm-4 text-center">
+                    <div class="column completed">
+                        <a
+                        href="#kps"
+                        data-toggle="modal"
+                        data-target="#kps">
+                      <div class="content">
+                        <div class="bg">
+                          
+                            <div class="middle">
+                              <i class="glyphicon glyphicon-eye-open"></i>
+                            </div>
+                            <img src="img/kps1.jpg" alt="Mountains" style="width:100%"/>
+                        </div>
+                        <div class="bname">
+                        <h4>KPS Shopping Mall</h4>
+                      </div>
+                        <hr>
+                        <h3>Thrissur</h3>
+                        <div class="status">Project Completed</div> 
+                      </div></a>
+                      <a class="btn" data-toggle="modal" data-target="#kps">
+                        View
+                      </a>
+                    </div>
               
-
-
+                  </div>
+      
+                  <hr>
 
             
 
-          </div>
-
-          </div>
-        
-          <!-- The Modal -->
-          <div class="modal" id="myModal">
-              <div class="modal-dialog">
-                <div class="modal-content">
-
-                  <!-- Modal Header -->
-                   <div class="modal-header">
-                      <button type="button" class="close" data-dismiss="modal">&times;</button>
-                      <h4 class="modal-title">Project Details</h4>
-                      
+                  <div class="col-sm-4 text-center">
+                    <div class="column completed">
+                        <a
+                        href="#hc"
+                        data-toggle="modal"
+                        data-target="#hc">
+                      <div class="content">
+                        <div class="bg">
+                          
+                            <div class="middle">
+                              <i class="glyphicon glyphicon-eye-open"></i>
+                            </div>
+                            <img src="img/hayath.JPG" alt="Hayath Complex" style="width:100%"/>
+                        </div>
+                        <div class="bname">
+                        <h4>Hayath Complex</h4>
+                      </div>
+                        <hr>
+                        <h3>Thrissur</h3>
+                        <div class="status">Project Completed</div> 
+                      </div></a>
+                      <a class="btn" data-toggle="modal" data-target="#hc">
+                        View
+                      </a>
+                    </div>
+              
                   </div>
+      
+                  <hr>
 
-                  <!-- Modal body -->
-                    <div class="modal-body">
-                     <img src="img/2.JPG" alt="MJ Flats"  >
-                     <h3 class="text-center">MJ Flats</h3>
-                     
-                      <i class="glyphicon glyphicon-home"></i><p>Type: Apartment</p>
-                      <i class="glyphicon glyphicon-map-marker"></i><p>Location:North Palathuruthy Road, 
-                             Kaloor </p>
-                             <ul></ul>
-                   
-                   </div>
+            <hr>
 
-                  <!-- Modal footer -->
-                    <div class="modal-footer">
-                    <button type="button" class="btn btn-info" data-dismiss="modal">Close</button>
+            <div class="col-sm-4 text-center">
+              <div class="column completed">
+                  <a
+                  href="#vh"
+                  data-toggle="modal"
+                  data-target="#vh">
+                <div class="content">
+                  <div class="bg">
+                    
+                      <div class="middle">
+                        <i class="glyphicon glyphicon-eye-open"></i>
+                      </div>
+                      <img src="img/veliyil1.jpg" alt="Veliyil House" style="width:100%"/>
                   </div>
-
+                  <div class="bname">
+                  <h4>Veliyil House</h4>
                 </div>
+                  <hr>
+                  <h3>Kollam</h3>
+                  <div class="status">Project Completed</div> 
+                </div></a>
+                <a class="btn" data-toggle="modal" data-target="#vh">
+                  View
+                </a>
               </div>
+        
             </div>
 
+            <hr>
+
+      
+
+            <div class="col-sm-4 text-center">
+              <div class="column completed">
+                  <a
+                  href="#ch"
+                  data-toggle="modal"
+                  data-target="#ch">
+                <div class="content">
+                  <div class="bg">
+                    
+                      <div class="middle">
+                        <i class="glyphicon glyphicon-eye-open"></i>
+                      </div>
+                      <img src="img/chal1.JPG" alt="Chalakkal House" style="width:100%"/>
+                  </div>
+                  <div class="bname">
+                  <h4>Chalakkal House</h4>
+                </div>
+                  <hr>
+                  <h3>Iringalakkuda</h3>
+                  <div class="status">Project Completed</div> 
+                </div></a>
+                <a class="btn" data-toggle="modal" data-target="#ch">
+                  View
+                </a>
+              </div>
+        
+            </div>
+
+            <hr>
+            <hr>
+            <div class="col-sm-4 text-center">
+              <div class="column ongoing">
+                  <a
+                  href="#vp"
+                  data-toggle="modal"
+                  data-target="#vp">
+                <div class="content">
+                  <div class="bg">
+                    
+                      <div class="middle">
+                        <i class="glyphicon glyphicon-eye-open"></i>
+                      </div>
+                      <img src="img/vp - Copy.jpg" alt="VP Tower" style="width:100%"/>
+                  </div>
+                  <div class="bname">
+                  <h4>VP Tower</h4>
+                </div>
+                  <hr>
+                  <h3>Madavana</h3>
+                  <div class="status">Project Completed</div> 
+                </div></a>
+                <a class="btn" data-toggle="modal" data-target="#vp">
+                  View
+                </a>
+              </div>
+        
+            </div>
+
+           
+
+            <hr>
+
+            <div class="col-sm-4 text-center">
+              <div class="column ongoing">
+                  <a
+                  href="#basheer"
+                  data-toggle="modal"
+                  data-target="#basheer">
+                <div class="content">
+                  <div class="bg">
+                    
+                      <div class="middle">
+                        <i class="glyphicon glyphicon-eye-open"></i>
+                      </div>
+                      <img src="img/image017.jpg" alt="basheer House" style="width:100%"/>
+                  </div>
+                  <div class="bname">
+                  <h4> House</h4>
+                </div>
+                  <hr>
+                  <h3>.</h3>
+                  <div class="status">Project Completed</div> 
+                </div></a>
+                <a class="btn" data-toggle="modal" data-target="#basheer">
+                  View
+                </a>
+              </div>
+        
+            </div>
+
+           
+
+            <hr>
+
+            <hr>
+            <div class="col-sm-4 text-center">
+              <div class="column completed">
+                  <a
+                  href="#rinz"
+                  data-toggle="modal"
+                  data-target="#rinz">
+                <div class="content">
+                  <div class="bg">
+                    
+                      <div class="middle">
+                        <i class="glyphicon glyphicon-eye-open"></i>
+                      </div>
+                      <img src="img/rinzthumb.jpg" alt="Rinz House" style="width:100%"/>
+                  </div>
+                  <div class="bname">
+                  <h4> Rinz House</h4>
+                </div>
+                  <hr>
+                  <h3>Kottakkal</h3>
+                  <div class="status">Project Completed</div> 
+                </div></a>
+                <a class="btn" data-toggle="modal" data-target="#rinz">
+                  View
+                </a>
+              </div>
+        
+            </div>
+
+            
+
+            
+
+            
+
+           
+
+            <!-- END GRID -->
+          </div>
+
+          <!-- END MAIN -->
+        </div>
+      </div>
+    </div>
+
+    <!-- The Modal -->
+    <div class="modal" id="myModal">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <!-- Modal Header -->
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">
+              &times;
+            </button>
+            <h4 class="modal-title">Project Details</h4>
+          </div>
+
+          <!-- Modal body -->
+          <div class="modal-body">
+            <img src="img/2.JPG" alt="MJ Flats" />
+            <h3 class="text-center">MJ Flats</h3>
+            <div class="modal-innerbody">
+
+              <i class="glyphicon glyphicon-home"></i>
+              <p>Type: Apartment</p>
+              <i class="glyphicon glyphicon-tags"></i>
+              <p>Status: Project Completed</p>
+              <i class="glyphicon glyphicon-map-marker"></i>
+              <p>Location:North Palathuruthy Road, Kaloor</p>
+              <i class="glyphicon glyphicon-briefcase"></i>
+              <p>Work Scope: Main Contractors</p>
+              <i class="glyphicon glyphicon-wrench"></i>
+              <p>Works Included
+              <ul>
+                <li>Architectural Works </li>
+                <li>External works including drainage and car parking</li>
+                <li> Area : 15000 sqft</li>
+              </ul></p>
+              <i class="glyphicon glyphicon-user"></i>
+              <p>Client: Jomon Thottungal</p>
+              <i class="glyphicon glyphicon-earphone"></i>
+              <p>Mob: 9847532767</p>
+            </div>
+          </div>
+
+          <!-- Modal footer -->
+          <div class="modal-footer">
+            <button type="button" class="btn btn-info" data-dismiss="modal">
+              Close
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- tpk -->
+    <!-- The Modal -->
+    <div class="modal" id="tpk">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <!-- Modal Header -->
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">
+              &times;
+            </button>
+            <h4 class="modal-title">Project Details</h4>
+          </div>
+
+          <!-- Modal body -->
+          <div class="modal-body">
+            <img src="img/tpk3.JPG" alt="The Palakot Residence" />
+            <h3 class="text-center">The Palakot Residence</h3>
+            <div class="modal-innerbody">
+
+              <i class="glyphicon glyphicon-home"></i>
+              <p>Type: Apartment</p>
+              <i class="glyphicon glyphicon-tags"></i>
+              <p>Status: Project Completed</p>
+              <i class="glyphicon glyphicon-map-marker"></i>
+              <p>Location:Pulamon, Kottarakkara</p>
+              <i class="glyphicon glyphicon-briefcase"></i>
+              <p>Work Scope: Main Contractor</p>
+              <i class="glyphicon glyphicon-wrench"></i>
+              <p>Works Included
+              <ul>
+                <li>Architectural Works</li>
+                <li>Mechanical and electrical works</li>
+                <li>External works including drainage and car parking</li>
+                <li> Area : 29000 sqft</li>
+              </ul></p>
+              <i class="glyphicon glyphicon-user"></i>
+              <p>Client: Johnson Varghese</p>
+              <i class="glyphicon glyphicon-earphone"></i>
+              <p>Mob: 9633001403</p>
+            </div>
+          </div>
+
+          <!-- Modal footer -->
+          <div class="modal-footer">
+            <button type="button" class="btn btn-info" data-dismiss="modal">
+              Close
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- kps -->
+    <!-- The Modal -->
+    <div class="modal" id="kps">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <!-- Modal Header -->
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">
+              &times;
+            </button>
+            <h4 class="modal-title">Project Details</h4>
+          </div>
+
+          <!-- Modal body -->
+          <div class="modal-body">
+            <img src="img/kps1.jpg" alt="KPS Shopping Mall" />
+            <h3 class="text-center">KPS Shopping Mall</h3>
+            <div class="modal-innerbody">
+
+              <i class="glyphicon glyphicon-home"></i>
+              <p>Type: Shopping Complex with Auditorium</p>
+              <i class="glyphicon glyphicon-tags"></i>
+              <p>Status: Project Completed</p>
+              <i class="glyphicon glyphicon-map-marker"></i>
+              <p>Location: Ayyanthol, Thrissur</p>
+              <i class="glyphicon glyphicon-briefcase"></i>
+              <p>Work Scope: Main Contractor</p>
+              <i class="glyphicon glyphicon-wrench"></i>
+              <p>Works Included
+              <ul>
+                <li>Architectural Works</li>
+                <li>Structural Steel works </li>
+                <li>Mechanical and electrical works</li>
+                <li>External works including drainage and car parking</li>
+                <li> Area : 22000 sqft</li>
+              </ul></p>
+              <i class="glyphicon glyphicon-user"></i>
+              <p>Client: K.P. Shaju</p>
+              <i class="glyphicon glyphicon-earphone"></i>
+              <p>Mob: 9562424282</p>
+            </div>
+          </div>
+
+          <!-- Modal footer -->
+            <div class="modal-footer">
+            <button type="button" class="btn btn-info" data-dismiss="modal">
+              Close
+            </button>
+            </div>
+          </div>
+          </div>
+          </div>
+
+
+    <!-- hc -->
+
+    <!-- The Modal -->
+    <div class="modal" id="hc">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <!-- Modal Header -->
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">
+              &times;
+            </button>
+            <h4 class="modal-title">Project Details</h4>
+          </div>
+
+          <!-- Modal body -->
+          <div class="modal-body">
+            <img src="img/hayath.JPG" alt="Hayath Complex" />
+            <h3 class="text-center">Hayath Complex</h3>
+            <div class="modal-innerbody">
+
+              <i class="glyphicon glyphicon-home"></i>
+              <p>Type: Shopping Complex with Auditorium</p>
+              <i class="glyphicon glyphicon-tags"></i>
+              <p>Status: Project Completed</p>
+              <i class="glyphicon glyphicon-map-marker"></i>
+              <p>Location: Vadanappilly, Thrissur</p>
+              <i class="glyphicon glyphicon-briefcase"></i>
+              <p>Work Scope: Main Contractor</p>
+              <i class="glyphicon glyphicon-wrench"></i>
+              <p>Works Included
+              <ul>
+                <li>Architectural Works</li>
+                <li>Mechanical and electrical works</li>
+                <li>External works including drainage and car parking</li>
+                <li> Area : 32500 sqft</li>
+              </ul></p>
+              <i class="glyphicon glyphicon-user"></i>
+              <p>Client: Kunju Muhammed</p>
+              <i class="glyphicon glyphicon-earphone"></i>
+              <p>Mob: 9846447514</p>
+            </div>
+          </div>
+
+          <!-- Modal footer -->
+            <div class="modal-footer">
+            <button type="button" class="btn btn-info" data-dismiss="modal">
+              Close
+            </button>
+            </div>
+          </div>
+          </div>
+          </div>
+
+          <!-- Veliyil House -->
+           <!-- The Modal -->
+    <div class="modal" id="vh">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <!-- Modal Header -->
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">
+              &times;
+            </button>
+            <h4 class="modal-title">Project Details</h4>
+          </div>
+
+          <!-- Modal body -->
+          <div class="modal-body">
+            <img src="img/veliyil.jpg" alt="Veliyil House" />
+            <h3 class="text-center">Veliyil House</h3>
+            <div class="modal-innerbody">
+
+              <i class="glyphicon glyphicon-home"></i>
+              <p>Type: House</p>
+              <i class="glyphicon glyphicon-tags"></i>
+              <p>Status: Project Completed</p>
+              <i class="glyphicon glyphicon-map-marker"></i>
+              <p>Location: </p>
+              <i class="glyphicon glyphicon-briefcase"></i>
+              <p>Work Scope: Main Contractor</p>
+              <i class="glyphicon glyphicon-wrench"></i>
+              <p>Works Included
+              <ul>
+                <li>Architectural Works</li>
+               
+                <li> Area : 4700 sqft</li>
+              </ul></p>
+              <i class="glyphicon glyphicon-user"></i>
+              <p>Client: Nazeer Veliyil</p>
+              <i class="glyphicon glyphicon-earphone"></i>
+              <p>Mob: +971551999973</p>
+            </div>
+          </div>
+
+          <!-- Modal footer -->
+            <div class="modal-footer">
+            <button type="button" class="btn btn-info" data-dismiss="modal">
+              Close
+            </button>
+            </div>
+          </div>
+          </div>
+          </div>
+
+          <!-- Chalakkal House -->
+           <!-- The Modal -->
+    <div class="modal" id="ch">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <!-- Modal Header -->
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">
+              &times;
+            </button>
+            <h4 class="modal-title">Project Details</h4>
+          </div>
 
           
+          <!-- Modal body -->
+          <div class="modal-body">
+            <img src="img/chal1.JPG" alt="Chalakkal House" />
+            <h3 class="text-center">Chalakkal House</h3>
+            <div class="modal-innerbody">
 
-       
-        
+              <i class="glyphicon glyphicon-home"></i>
+              <p>Type: House</p>
+              <i class="glyphicon glyphicon-tags"></i>
+              <p>Status: Project Completed</p>
+              <i class="glyphicon glyphicon-map-marker"></i>
+              <p>Location:Iringalakkuda </p>
+              <i class="glyphicon glyphicon-briefcase"></i>
+              <p>Work Scope: Main Contractor</p>
+              <i class="glyphicon glyphicon-wrench"></i>
+              <p>Works Included
+              <ul>
+                <li>Architectural Works</li>
+               
+                <li> Area : 3500 sqft</li>
+              </ul></p>
+              <i class="glyphicon glyphicon-user"></i>
+              <p>Client: Raju Chacko</p>
+              <i class="glyphicon glyphicon-earphone"></i>
+              <p>Mob: +61410872267, 9349056805</p>
+            </div>
+          </div>
 
-  
+          <!-- Modal footer -->
+            <div class="modal-footer">
+            <button type="button" class="btn btn-info" data-dismiss="modal">
+              Close
+            </button>
+            </div>
+          </div>
+          </div>
+          </div>
+
+
+          <!-- Rinz House -->
+           <!-- The Modal -->
+    <div class="modal" id="rinz">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <!-- Modal Header -->
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">
+              &times;
+            </button>
+            <h4 class="modal-title">Project Details</h4>
+          </div>
+
+          
+          <!-- Modal body -->
+          <div class="modal-body">
+            <img src="img/rinz1.jpg" alt="Rinz House" />
+            <h3 class="text-center">Rinz House</h3>
+            <div class="modal-innerbody">
+
+              <i class="glyphicon glyphicon-home"></i>
+              <p>Type: House</p>
+              <i class="glyphicon glyphicon-tags"></i>
+              <p>Status: Project Completed</p>
+              <i class="glyphicon glyphicon-map-marker"></i>
+              <p>Location: Kottakkal </p>
+              <i class="glyphicon glyphicon-briefcase"></i>
+              <p>Work Scope: Main Contractor</p>
+              <i class="glyphicon glyphicon-wrench"></i>
+              <p>Works Included
+              <ul>
+                <li>Architectural Works</li>
+               
+                <li> Area : 4900 sqft</li>
+              </ul></p>
+              <i class="glyphicon glyphicon-user"></i>
+              <p>Client: Dr. Nizab</p>
+              <i class="glyphicon glyphicon-earphone"></i>
+              <p>Mob: 9400522886</p>
+            </div>
+          </div>
+          </div>
+          </div>
+        </div>
+
+           <!-- basheer House -->
+           <!-- The Modal -->
+    <div class="modal" id="basheer">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <!-- Modal Header -->
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">
+              &times;
+            </button>
+            <h4 class="modal-title">Project Details</h4>
+          </div>
+
+          
+          <!-- Modal body -->
+          <div class="modal-body">
+            <img src="img/image017.jpg" alt="Rinz House" />
+            <h3 class="text-center">. House</h3>
+            <div class="modal-innerbody">
+
+              <i class="glyphicon glyphicon-home"></i>
+              <p>Type: House</p>
+              <i class="glyphicon glyphicon-tags"></i>
+              <p>Status: Ongoing Project</p>
+              <i class="glyphicon glyphicon-map-marker"></i>
+              <p>Location: . </p>
+              <i class="glyphicon glyphicon-briefcase"></i>
+              <p>Work Scope: Main Contractor</p>
+              <i class="glyphicon glyphicon-wrench"></i>
+              <p>Works Included
+              <ul>
+                <li>Architectural Works</li>
+               
+                <li> Area : 3600 sqft</li>
+              </ul></p>
+              <i class="glyphicon glyphicon-user"></i>
+              <p>Client:Basheer</p>
+              <i class="glyphicon glyphicon-earphone"></i>
+              <p>Mob: 9447056299</p>
+            </div>
+          </div>
+          <!-- Modal footer -->
+            <div class="modal-footer">
+            <button type="button" class="btn btn-info" data-dismiss="modal">
+              Close
+            </button>
+            </div>
+          </div>
+          </div>
+          </div>
+
+          <!-- vp -->
+    <!-- The Modal -->
+    <div class="modal" id="vp">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <!-- Modal Header -->
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">
+              &times;
+            </button>
+            <h4 class="modal-title">Project Details</h4>
+          </div>
+
+          <!-- Modal body -->
+          <div class="modal-body">
+            <img src="img/vp.jpg" alt="KPS Shopping Mall" />
+            <h3 class="text-center">VP Tower</h3>
+            <div class="modal-innerbody">
+
+              <i class="glyphicon glyphicon-home"></i>
+              <p>Type: Apartment/Commercial building</p>
+              <i class="glyphicon glyphicon-tags"></i>
+              <p>Status: Ongoing Project</p>
+              <i class="glyphicon glyphicon-map-marker"></i>
+              <p>Location: Madavana,Kochi</p>
+              <i class="glyphicon glyphicon-briefcase"></i>
+              <p>Work Scope: Main Contractor</p>
+              <i class="glyphicon glyphicon-wrench"></i>
+              <p>Works Included
+              <ul>
+                <li>Architectural Works</li>
+                <li>Mechanical and electrical works</li>
+                <li>Exterior and Interior Decorations</li>
+                <li>External works including drainage and car parking</li>
+                <li> Area : 4800 sqft</li>
+              </ul></p>
+              <i class="glyphicon glyphicon-user"></i>
+              <p>Client: Dr. Ashraf</p>
+              <i class="glyphicon glyphicon-earphone"></i>
+              <p>Mob: 7907480619</p>
+            </div>
+          </div>
+
+          <!-- Modal footer -->
+            <div class="modal-footer">
+            <button type="button" class="btn btn-info" data-dismiss="modal">
+              Close
+            </button>
+            </div>
+          </div>
+          </div>
+          </div>
+
+
 
     <!-- Footer -->
     <footer class="text-center">
@@ -179,6 +1020,52 @@
       ><br /><br />
       <p>PR Constructions, Copyright &copy; 2018.</p>
     </footer>
-    
+
+    <script>
+      filterSelection("all");
+      function filterSelection(c) {
+        var x, i;
+        x = document.getElementsByClassName("column");
+        if (c == "all") c = "";
+        for (i = 0; i < x.length; i++) {
+          w3RemoveClass(x[i], "show");
+          if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
+        }
+      }
+
+      function w3AddClass(element, name) {
+        var i, arr1, arr2;
+        arr1 = element.className.split(" ");
+        arr2 = name.split(" ");
+        for (i = 0; i < arr2.length; i++) {
+          if (arr1.indexOf(arr2[i]) == -1) {
+            element.className += " " + arr2[i];
+          }
+        }
+      }
+
+      function w3RemoveClass(element, name) {
+        var i, arr1, arr2;
+        arr1 = element.className.split(" ");
+        arr2 = name.split(" ");
+        for (i = 0; i < arr2.length; i++) {
+          while (arr1.indexOf(arr2[i]) > -1) {
+            arr1.splice(arr1.indexOf(arr2[i]), 1);
+          }
+        }
+        element.className = arr1.join(" ");
+      }
+
+      // Add active class to the current button (highlight it)
+      var btnContainer = document.getElementById("myBtnContainer");
+      var btns = btnContainer.getElementsByClassName("btn");
+      for (var i = 0; i < btns.length; i++) {
+        btns[i].addEventListener("click", function() {
+          var current = document.getElementsByClassName("active");
+          current[0].className = current[0].className.replace(" active", "");
+          this.className += " active";
+        });
+      }
+    </script>
   </body>
 </html>

@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>PR Constructions</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Lato"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Montserrat"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="main.css" />
+    <script src="main.js"></script>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      a{
+        text-decoration: none !important; 
+      }
+      h3{
+        margin:  0;
+        padding:  5px 0;
+        background-color: #333;
+        color: #ffffff;
+      }
+      h4 {
+        margin: 0;
+        padding:10px 0;
+      }
+      .btn {
+        margin: 5px;
+      }
+
+      /* Center website */
+
+      .row {
+        margin: 10px -16px;
+      }
+
+      /* Add padding BETWEEN each column */
+      .row,
+      .row > .column {
+        padding: 8px;
+      }
+
+      /* Create three equal columns that floats next to each other */
+      .column {
+        display: none; /* Hide all elements by default */
+      }
+
+      /* Clear floats after rows */
+      .row:after {
+        content: "";
+        display: table;
+        clear: both;
+      }
+
+      /* Content */
+      .content {
+        background-color: white;
+        margin: 30px 0 10px 0;
+        border: #056a92 solid 2px;
+        background-color: #ffffff;
+        border-radius: 5px;
+      }
+
+      .content hr{
+        padding: 0;
+        margin: 0;
+
+      }
+
+      .bg {
+        background-color: #3ca8d3;
+        overflow: hidden;
+        
+      }
+      
+      .status{
+        text-align: center;
+        background-color: #3ca8d3;
+        color: #ffffff;
+      }
+
+      /* The "show" class is added to the filtered elements */
+      .show {
+        display: block;
+      }
+
+      .content img {
+        opacity: 1;
+        display: block;
+        width: 100%;
+        height: auto;
+        transition: 0.5s ease;
+        backface-visibility: hidden;
+      }
+    
+
+      
+
+      .content:hover img {
+        transform: scale(1.1);
+      }
+
+      .content:hover img
+       {
+        opacity: 0.5;
+      }
+
+      .middle {
+        transition: 0.5s ease;
+        opacity: 0;
+        position: absolute;
+        top: 37%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        text-align: center;
+        color: black;
+      }
+
+      .middle .glyphicon {
+        color: black;
+        font-size: 50px;
+      }
+
+      .content:hover .middle {
+        opacity: 1;
+      }
+
+      .row hr{
+        display: none;
+      }
+      
+      @media (max-width: 600px) {
+        .row hr {
+          display: block;
+                 }
+      }
+
+
+      .modal-header {
+        padding: 5px 10px;
+      }
+      .modal-body{
+        padding: 0;
+        margin: 0;
+      }
+      .modal-innerbody{
+        margin: 30px;
+      }
+      
+    </style>
+  </head>
+  <body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="50">
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button
+            type="button"
+            class="navbar-toggle"
+            data-toggle="collapse"
+            data-target="#myNavbar"
+          >
+            <span class="icon-bar"></span> <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#myPage"
+            ><img class="logo" src="img/prlogo.png" alt="Logo"
+          /></a>
+        </div>
+        <div class="collapse navbar-collapse" id="myNavbar">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="about.html">ABOUT</a></li>
+            <li><a href="#portfolio">PROJECTS</a></li>
+            <li><a href="contact.html">CONTACT</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div class="showcase2"><p></p></div>
+
+    <!-- Container (Portfolio Section) -->
+    <div id="portfolio" class="">
+      <div class="container">
+        <!-- MAIN (Center website) -->
+        <div class="main ">
+          <h3 class="text-center">Projects</h3>
+          <hr style="size:10px;">  
+          
+
+          <div id="myBtnContainer" class="text-center">
+            <button class="btn active" onclick="filterSelection('all')">
+              Show all
+            </button>
+            <button class="btn" onclick="filterSelection('completed')">
+              Completed
+            </button>
+            <button class="btn" onclick="filterSelection('ongoing')">
+              Ongoing
+            </button>
+            <button class="btn" onclick="filterSelection('upcoming')">
+              Upcoming
+            </button>
+          </div>
+          <hr>
+
+          <!-- Portfolio Gallery Grid -->
+          <div class="row">
+            <div class="col-sm-4 text-center">
+              <div class="column completed">
+                  <a
+                  href="#myModal"
+                  data-toggle="modal"
+                  data-target="#myModal">
+                <div class="content">
+                  <div class="bg">
+                    
+                      <div class="middle">
+                        <i class="glyphicon glyphicon-eye-open"></i>
+                      </div>
+                      <img src="img/2.JPG" alt="Mountains" style="width:100%"/>
+                  </div>
+                  
+                  <h4>MJ Flats</h4>
+                  <hr>
+                  <h3>Kaloor</h3>
+                  <div class="status">Project Completed</div> 
+                </div></a>
+              </div>
+              
+              <b class="btn" data-toggle="modal" data-target="#myModal">
+                View
+              </b>
+          
+            </div>
+
+            <hr>
+
+            <div class="col-sm-4 text-center">
+              <div class="column completed">
+                <div class="content">
+                  <div class="bg">
+                    <img src="img/2.JPG" alt="Lights" style="width:100%" />
+                  </div>
+                  
+                  <h4>Lights</h4>
+                  <div class="status">Project Completed</div> 
+                  <h3 class="text-center">Kaloor</h3>
+                 
+                </div>
+              </div>
+              <button class="btn" data-toggle="modal" data-target="#myModal">
+                View
+              </button>
+            </div>
+
+            <hr>
+
+            <div class="col-sm-4 text-center">
+              <div class="column completed">
+                <div class="content">
+                  <div class="bg">
+                    <img src="img/2.JPG" alt="Nature" style="width:100%" />
+                  </div>
+
+                  <h4>Forest</h4>
+                  <hr>
+                  <h3 class="text-center">Kaloor</h3>
+                  <div class="status">Project Completed</div> 
+                </div>
+              </div>
+              <b class="btn" data-toggle="modal" data-target="#myModal">
+                View
+              </b>
+            </div>
+
+            <hr>
+
+            <div class="col-sm-4">
+              <div class="column ongoing">
+                <div class="content">
+                  <div class="bg">
+                    <img src="img/4.JPG" alt="Car" style="width:100%" />
+                  </div>
+                  <h4>Retro</h4>
+                  <p>Lorem ipsum dolor..</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-sm-4">
+              <div class="column ongoing">
+                <div class="content">
+                  <div class="bg">
+                    <img src="img/4.JPG" alt="Car" style="width:100%" />
+                  </div>
+
+                  <h4>Fast</h4>
+                  <p>Lorem ipsum dolor..</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-sm-4">
+              <div class="column ongoing">
+                <div class="content">
+                  <div class="bg">
+                    <img src="img/4.JPG" alt="Car" style="width:100%" />
+                  </div>
+
+                  <h4>Classic</h4>
+                  <p>Lorem ipsum dolor..</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-sm-4">
+              <div class="column upcoming">
+                <div class="content">
+                  <div class="bg">
+                    <img src="img/2.JPG" alt="Car" style="width:100%" />
+                  </div>
+
+                  <h4>Girl</h4>
+                  <p>Lorem ipsum dolor..</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-sm-4">
+              <div class="column upcoming">
+                <div class="content">
+                  <div class="bg">
+                    <img src="img/4.JPG" alt="Car" style="width:100%" />
+                  </div>
+
+                  <h4>Man</h4>
+                  <p>Lorem ipsum dolor..</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-sm-4">
+              <div class="column upcoming">
+                <div class="content">
+                  <div class="bg">
+                    <img src="img/6.JPG" alt="Car" style="width:100%" />
+                  </div>
+
+                  <h4>Woman</h4>
+                  <p>Lorem ipsum dolor..</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-sm-4">
+              <div class="column ongoing">
+                <div class="content">
+                  <div class="bg">
+                    <img src="img/4.JPG" alt="Car" style="width:100%" />
+                  </div>
+
+                  <h4>Fast</h4>
+                  <p>Lorem ipsum dolor..</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-sm-4">
+              <div class="column completed">
+                <div class="content">
+                  <div class="bg">
+                    <img
+                      src="img/projects1.jpg"
+                      alt="Mountains"
+                      style="width:100%"
+                    />
+                  </div>
+
+                  <h4>Mountains</h4>
+                  <p>Lorem ipsum dolor..</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- END GRID -->
+          </div>
+
+          <!-- END MAIN -->
+        </div>
+      </div>
+    </div>
+
+    <!-- The Modal -->
+    <div class="modal" id="myModal">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <!-- Modal Header -->
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">
+              &times;
+            </button>
+            <h4 class="modal-title">Project Details</h4>
+          </div>
+
+          <!-- Modal body -->
+          <div class="modal-body">
+            <img src="img/2.JPG" alt="MJ Flats" />
+            <h3 class="text-center">MJ Flats</h3>
+            <div class="modal-innerbody">
+
+              <i class="glyphicon glyphicon-home"></i>
+              <p>Type: Apartment</p>
+              <i class="glyphicon glyphicon-tags"></i>
+              <p>Status: Project Completed</p>
+              <i class="glyphicon glyphicon-map-marker"></i>
+              <p>Location:North Palathuruthy Road, Kaloor</p>
+              <i class="glyphicon glyphicon-briefcase"></i>
+              <p>Work Scope: Main Contractors</p>
+              <i class="glyphicon glyphicon-wrench"></i>
+              <p>Works Included
+              <ul>
+                <li>Architectural Works </li>
+                <li>External works including drainage and car parking</li>
+                <li> Area : 15000 sqft</li>
+              </ul></p>
+              <i class="glyphicon glyphicon-user"></i>
+              <p>Client: Jomon Thottungal</p>
+              <i class="glyphicon glyphicon-earphone"></i>
+              <p>Mob: 9847532767</p>
+            </div>
+          </div>
+
+          <!-- Modal footer -->
+          <div class="modal-footer">
+            <button type="button" class="btn btn-info" data-dismiss="modal">
+              Close
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="text-center">
+      <a class="up-arrow" href="#myPage" data-toggle="tooltip" title="TO TOP">
+        <span class="glyphicon glyphicon-chevron-up"></span> </a
+      ><br /><br />
+      <p>PR Constructions, Copyright &copy; 2018.</p>
+    </footer>
+
+    <script>
+      filterSelection("all");
+      function filterSelection(c) {
+        var x, i;
+        x = document.getElementsByClassName("column");
+        if (c == "all") c = "";
+        for (i = 0; i < x.length; i++) {
+          w3RemoveClass(x[i], "show");
+          if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
+        }
+      }
+
+      function w3AddClass(element, name) {
+        var i, arr1, arr2;
+        arr1 = element.className.split(" ");
+        arr2 = name.split(" ");
+        for (i = 0; i < arr2.length; i++) {
+          if (arr1.indexOf(arr2[i]) == -1) {
+            element.className += " " + arr2[i];
+          }
+        }
+      }
+
+      function w3RemoveClass(element, name) {
+        var i, arr1, arr2;
+        arr1 = element.className.split(" ");
+        arr2 = name.split(" ");
+        for (i = 0; i < arr2.length; i++) {
+          while (arr1.indexOf(arr2[i]) > -1) {
+            arr1.splice(arr1.indexOf(arr2[i]), 1);
+          }
+        }
+        element.className = arr1.join(" ");
+      }
+
+      // Add active class to the current button (highlight it)
+      var btnContainer = document.getElementById("myBtnContainer");
+      var btns = btnContainer.getElementsByClassName("btn");
+      for (var i = 0; i < btns.length; i++) {
+        btns[i].addEventListener("click", function() {
+          var current = document.getElementsByClassName("active");
+          current[0].className = current[0].className.replace(" active", "");
+          this.className += " active";
+        });
+      }
+    </script>
+  </body>
+</html>
