@@ -3,6 +3,7 @@
   <head>
     <!-- Theme Made By www.w3schools.com - No Copyright -->
     <title>PR Constructions</title>
+    <link rel="shortcut icon" type="image/png" href="img/prlogo.png" />
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link
@@ -20,13 +21,13 @@
       type="text/css"
     />
     <style>
-      .floatl {
-        float: right;
+      .aboutimg {
+        overflow: hidden;
       }
 
-      @media (max-width: 770px) {
-        .floatl {
-          float: left;
+      @media (max-width: 1000px) {
+        .aboutimg {
+          display: none;
         }
       }
     </style>
@@ -54,7 +55,7 @@
         </div>
         <div class="collapse navbar-collapse" id="myNavbar">
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="#myPage">HOME</a></li>
+            <li><a class="act" href="#myPage">HOME</a></li>
             <li><a href="about.html">ABOUT</a></li>
             <li><a href="project.html">PROJECTS</a></li>
             <li><a href="contact.html">CONTACT</a></li>
@@ -84,24 +85,27 @@
 
     <!-- about section -->
     <div id="about" class="container">
-      <h3>ABOUT</h3>
+      <div class="col-md-4">
+        <div class="aboutimg"><img src="img/aboutus.jpg" alt="" /></div>
+      </div>
+      <div class="col-md-8">
+        <h3>ABOUT</h3>
+        <br />
 
-      <p>
-        PR Construction began as a general works contractor in 2008. Over the
-        years, the group has undertaken many challenging projects and
-        accumulated skills, know-how and experiences in design and build
-        solutions and related engineering works. <br /><br />
-        Today, PR Construction takes on the role of main contractor for small to
-        medium size projects and performs project management services to
-        coordinates specialist trades for industrial/commercial projects. We
-        also provide design inputs and engineering solutions as value-add
-        services to our clients. <br /><br />
-        Our objective is to provide our clients with an “I am assured”
-        experience when we are chosen to execute their projects. Our emphasis on
-        clear communication and follow-through procedures ensures that client’s
-        objectives are top priority in the planning and execution of all our
-        processes.
-      </p>
+        <p>
+          PR Construction takes on the role of main contractor for small to
+          medium size projects and performs project management services to
+          coordinates specialist trades for industrial/commercial projects. We
+          also provide design inputs and engineering solutions as value-add
+          services to our clients. <br /><br />
+          PR Constructions began as a general works contractor in 2008 and
+          remains focused on projects in Kerala. Our objective is to provide our
+          clients with an “I am assured” experience when we are chosen to
+          execute their projects. Our emphasis on clear communication and
+          follow-through procedures ensures that client’s objectives are top
+          priority in the planning and execution of all our processes.
+        </p>
+      </div>
     </div>
 
     <!-- Projects -->
@@ -218,9 +222,8 @@
         <div class="col-md-4 col-sm-4 col">
           <span class="glyphicon glyphicon-earphone"></span>
           <p>
-            Tel : +91 000 0000000, +91 000000000 <br />
             Mob : +91 95449 87733, 95440 97303 <br />
-            varghesepallichan@gmail.com
+            98955 31659 Email:varghesepallichan@gmail.com
           </p>
         </div>
         <div class="col-md-4 col-sm-4 col">

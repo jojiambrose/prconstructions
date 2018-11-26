@@ -133,11 +133,11 @@ h4,
   color: #d5d5d5 !important;
 }
 .navbar-nav li a:hover {
-  color: #fff !important;
+  color: #3ca8d3 !important;
 }
-.navbar-nav li.active a {
+.navbar-nav li a.act {
   color: #fff !important;
-  background-color: #29292c !important;
+  background-color: #3ca8d3 !important;
 }
 .navbar-default .navbar-toggle {
   border-color: transparent;
@@ -225,6 +225,9 @@ h4,
   padding-top: 10px;
   padding-bottom: 10px;
 }
+.floatl {
+  float: right;
+}
 
 .mailbtn {
   text-decoration: none;
@@ -260,6 +263,9 @@ textarea {
 @media (max-width: 990px) {
   .container {
     padding: 80px 30px;
+  }
+  .floatl {
+    float: left;
   }
 }
 @media (max-width: 600px) {
