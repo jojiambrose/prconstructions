@@ -175,6 +175,11 @@
          font-size: 30px;
        }
 
+       .modal-body hr{
+         padding: 0;
+         margin: 0;
+       }
+
       @media (max-width: 600px) {
         .modal-body h3{
          padding: 10px;
@@ -182,15 +187,21 @@
        }
       }
 
-      .modal-header {
+      .modal-header{
         padding: 5px 10px;
+      
       }
+     
       .modal-body{
         padding: 0;
         margin: 0;
       }
+     
       .modal-innerbody{
         margin: 30px;
+      }
+      .modal-footer{
+        text-align: center;
       }
 
 
@@ -245,44 +256,18 @@
             <button class="btn" onclick="filterSelection('ongoing')">
               Ongoing
             </button>
-            <button class="btn" onclick="filterSelection('upcoming')">
+            <!-- <button class="btn" onclick="filterSelection('upcoming')">
               Upcoming
-            </button>
+            </button> -->
           </div>
           <hr>
 
           <!-- Portfolio Gallery Grid -->
           <div class="row">
 
-              <div class="col-sm-4 text-center">
-                  <div class="column completed">
-                      <a
-                      href="#tpk"
-                      data-toggle="modal"
-                      data-target="#tpk">
-                    <div class="content">
-                      <div class="bg">
-                        
-                          <div class="middle">
-                            <i class="glyphicon glyphicon-eye-open"></i>
-                          </div>
-                          <img src="img/tpk3.JPG" alt="The Palakot Residence" style="width:100%"/>
-                      </div>
-                      <div class="bname">
-                      <h4>The Palakot Residence</h4>
-                    </div>
-                      <hr>
-                      <h3>Kottarakkara</h3>
-                      <div class="status">Project Completed</div> 
-                    </div></a>
-                    <a class="btn" data-toggle="modal" data-target="#tpk">
-                      View
-                    </a>
-                  </div>
-            
-                </div>
+             
     
-                <hr>
+                
 
                 <div class="col-sm-4 text-center">
                   <div class="column completed">
@@ -308,11 +293,12 @@
                     <b class="btn" data-toggle="modal" data-target="#myModal">
                       View
                     </b>
+                    <hr>
                   </div>
             
                 </div>
     
-                <hr>
+                
 
                 <div class="col-sm-4 text-center">
                     <div class="column completed">
@@ -338,11 +324,12 @@
                       <a class="btn" data-toggle="modal" data-target="#kps">
                         View
                       </a>
+                      <hr>
                     </div>
               
                   </div>
       
-                  <hr>
+                  
 
             
 
@@ -370,13 +357,14 @@
                       <a class="btn" data-toggle="modal" data-target="#hc">
                         View
                       </a>
+                      <hr>
                     </div>
-              
+                    
                   </div>
       
-                  <hr>
+                  
 
-            <hr>
+           
 
             <div class="col-sm-4 text-center">
               <div class="column completed">
@@ -396,18 +384,46 @@
                   <h4>Veliyil House</h4>
                 </div>
                   <hr>
-                  <h3>Kollam</h3>
+                  <h3>Karunagapally</h3>
                   <div class="status">Project Completed</div> 
                 </div></a>
                 <a class="btn" data-toggle="modal" data-target="#vh">
                   View
                 </a>
+                <hr>
               </div>
-        
+              
             </div>
 
-            <hr>
-
+            
+            <div class="col-sm-4 text-center">
+              <div class="column completed">
+                  <a
+                  href="#rinz"
+                  data-toggle="modal"
+                  data-target="#rinz">
+                <div class="content">
+                  <div class="bg">
+                    
+                      <div class="middle">
+                        <i class="glyphicon glyphicon-eye-open"></i>
+                      </div>
+                      <img src="img/rinzthumb.jpg" alt="Rinz House" style="width:100%"/>
+                  </div>
+                  <div class="bname">
+                  <h4> Rinz House</h4>
+                </div>
+                  <hr>
+                  <h3>Kottakkal</h3>
+                  <div class="status">Project Completed</div> 
+                </div></a>
+                <a class="btn" data-toggle="modal" data-target="#rinz">
+                  View
+                </a>
+                <hr>
+              </div>
+              
+            </div>
       
 
             <div class="col-sm-4 text-center">
@@ -434,12 +450,41 @@
                 <a class="btn" data-toggle="modal" data-target="#ch">
                   View
                 </a>
+                <hr>
               </div>
         
             </div>
 
-            <hr>
-            <hr>
+            <div class="col-sm-4 text-center">
+              <div class="column ongoing">
+                  <a
+                  href="#tpk"
+                  data-toggle="modal"
+                  data-target="#tpk">
+                <div class="content">
+                  <div class="bg">
+                    
+                      <div class="middle">
+                        <i class="glyphicon glyphicon-eye-open"></i>
+                      </div>
+                      <img src="img/tpk3.JPG" alt="The Palakot Residence" style="width:100%"/>
+                  </div>
+                  <div class="bname">
+                  <h4>The Palakot Residence</h4>
+                </div>
+                  <hr>
+                  <h3>Kottarakkara</h3>
+                  <div class="status">Ongoing Project</div> 
+                </div></a>
+                <a class="btn" data-toggle="modal" data-target="#tpk">
+                  View
+                </a>
+                <hr>
+              </div>
+        
+            </div>
+
+            
             <div class="col-sm-4 text-center">
               <div class="column ongoing">
                   <a
@@ -459,18 +504,19 @@
                 </div>
                   <hr>
                   <h3>Madavana</h3>
-                  <div class="status">Project Completed</div> 
+                  <div class="status">Ongoing Project</div> 
                 </div></a>
                 <a class="btn" data-toggle="modal" data-target="#vp">
                   View
                 </a>
+                <hr>
               </div>
         
             </div>
 
            
 
-            <hr>
+            
 
             <div class="col-sm-4 text-center">
               <div class="column ongoing">
@@ -484,54 +530,26 @@
                       <div class="middle">
                         <i class="glyphicon glyphicon-eye-open"></i>
                       </div>
-                      <img src="img/image017.jpg" alt="basheer House" style="width:100%"/>
+                      <img src="img/image017.jpg" alt="Mullapilly house" style="width:100%"/>
                   </div>
                   <div class="bname">
-                  <h4> House</h4>
+                  <h4>Mullapilly house</h4>
                 </div>
                   <hr>
-                  <h3>.</h3>
-                  <div class="status">Project Completed</div> 
+                  <h3>Perumbavoor</h3>
+                  <div class="status">Ongoing Project</div> 
                 </div></a>
                 <a class="btn" data-toggle="modal" data-target="#basheer">
                   View
                 </a>
+                <hr>
               </div>
-        
+              
             </div>
 
            
 
-            <hr>
-
-            <hr>
-            <div class="col-sm-4 text-center">
-              <div class="column completed">
-                  <a
-                  href="#rinz"
-                  data-toggle="modal"
-                  data-target="#rinz">
-                <div class="content">
-                  <div class="bg">
-                    
-                      <div class="middle">
-                        <i class="glyphicon glyphicon-eye-open"></i>
-                      </div>
-                      <img src="img/rinzthumb.jpg" alt="Rinz House" style="width:100%"/>
-                  </div>
-                  <div class="bname">
-                  <h4> Rinz House</h4>
-                </div>
-                  <hr>
-                  <h3>Kottakkal</h3>
-                  <div class="status">Project Completed</div> 
-                </div></a>
-                <a class="btn" data-toggle="modal" data-target="#rinz">
-                  View
-                </a>
-              </div>
-        
-            </div>
+           
 
             
 
@@ -565,6 +583,7 @@
           <div class="modal-body">
             <img src="img/2.JPG" alt="MJ Flats" />
             <h3 class="text-center">MJ Flats</h3>
+            <hr>
             <div class="modal-innerbody">
 
               <i class="glyphicon glyphicon-home"></i>
@@ -616,14 +635,15 @@
           <div class="modal-body">
             <img src="img/tpk3.JPG" alt="The Palakot Residence" />
             <h3 class="text-center">The Palakot Residence</h3>
+            <hr>
             <div class="modal-innerbody">
 
               <i class="glyphicon glyphicon-home"></i>
               <p>Type: Apartment</p>
               <i class="glyphicon glyphicon-tags"></i>
-              <p>Status: Project Completed</p>
+              <p>Status: Ongoing Project</p>
               <i class="glyphicon glyphicon-map-marker"></i>
-              <p>Location:Pulamon, Kottarakkara</p>
+              <p>Location: Pulamon, Kottarakkara</p>
               <i class="glyphicon glyphicon-briefcase"></i>
               <p>Work Scope: Main Contractor</p>
               <i class="glyphicon glyphicon-wrench"></i>
@@ -668,6 +688,7 @@
           <div class="modal-body">
             <img src="img/kps1.jpg" alt="KPS Shopping Mall" />
             <h3 class="text-center">KPS Shopping Mall</h3>
+            <hr>
             <div class="modal-innerbody">
 
               <i class="glyphicon glyphicon-home"></i>
@@ -723,6 +744,7 @@
           <div class="modal-body">
             <img src="img/hayath.JPG" alt="Hayath Complex" />
             <h3 class="text-center">Hayath Complex</h3>
+            <hr>
             <div class="modal-innerbody">
 
               <i class="glyphicon glyphicon-home"></i>
@@ -775,6 +797,7 @@
           <div class="modal-body">
             <img src="img/veliyil.jpg" alt="Veliyil House" />
             <h3 class="text-center">Veliyil House</h3>
+            <hr>
             <div class="modal-innerbody">
 
               <i class="glyphicon glyphicon-home"></i>
@@ -782,7 +805,8 @@
               <i class="glyphicon glyphicon-tags"></i>
               <p>Status: Project Completed</p>
               <i class="glyphicon glyphicon-map-marker"></i>
-              <p>Location: </p>
+              <p>Location: Puthiyakavu,
+                Karunagapally </p>
               <i class="glyphicon glyphicon-briefcase"></i>
               <p>Work Scope: Main Contractor</p>
               <i class="glyphicon glyphicon-wrench"></i>
@@ -827,6 +851,7 @@
           <div class="modal-body">
             <img src="img/chal1.JPG" alt="Chalakkal House" />
             <h3 class="text-center">Chalakkal House</h3>
+            <hr>
             <div class="modal-innerbody">
 
               <i class="glyphicon glyphicon-home"></i>
@@ -880,6 +905,7 @@
           <div class="modal-body">
             <img src="img/rinz1.jpg" alt="Rinz House" />
             <h3 class="text-center">Rinz House</h3>
+            <hr>
             <div class="modal-innerbody">
 
               <i class="glyphicon glyphicon-home"></i>
@@ -923,8 +949,9 @@
           
           <!-- Modal body -->
           <div class="modal-body">
-            <img src="img/image017.jpg" alt="Rinz House" />
-            <h3 class="text-center">. House</h3>
+            <img src="img/image017.jpg" alt="Mullapilly House" />
+            <h3 class="text-center">Mullapilly House</h3>
+            <hr>
             <div class="modal-innerbody">
 
               <i class="glyphicon glyphicon-home"></i>
@@ -932,7 +959,8 @@
               <i class="glyphicon glyphicon-tags"></i>
               <p>Status: Ongoing Project</p>
               <i class="glyphicon glyphicon-map-marker"></i>
-              <p>Location: . </p>
+              <p>Location: Nedumthodu,
+                Perumbavoor </p>
               <i class="glyphicon glyphicon-briefcase"></i>
               <p>Work Scope: Main Contractor</p>
               <i class="glyphicon glyphicon-wrench"></i>
@@ -973,8 +1001,9 @@
 
           <!-- Modal body -->
           <div class="modal-body">
-            <img src="img/vp.jpg" alt="KPS Shopping Mall" />
+            <img src="img/vp2.jpg" alt="VP Tower" />
             <h3 class="text-center">VP Tower</h3>
+            <hr>
             <div class="modal-innerbody">
 
               <i class="glyphicon glyphicon-home"></i>

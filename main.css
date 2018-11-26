@@ -25,6 +25,10 @@ a {
 .person:hover {
   border-color: #f1f1f1;
 }
+
+.carousel-indicators .active {
+  background-color: #3ca8d3;
+}
 .carousel-inner img {
   width: 100%; /* Set width to 100% */
   margin: auto;
@@ -148,18 +152,38 @@ h4,
 .dropdown-menu li a:hover {
   background-color: red !important;
 }
+.downbtn .glyphicon {
+  font-size: 40px;
+  animation: ani 1s infinite;
+  -webkit-animation: ani 1s infinite;
+  color: #fff;
+}
+@keyframes ani {
+  0% {
+    top: 85px;
+  }
+  50% {
+    top: 100px;
+  }
+  100% {
+    top: 85px;
+  }
+}
 .showcasehome {
   background-color: rgba(0, 0, 0, 0.5);
   margin: 20vh 0 0 0;
-  color: #f1f1f1;
+  color: #fff;
   padding-top: 10px;
   overflow-y: hidden;
 }
 .highlight {
   color: #3ca8d3;
 }
+.hl2 {
+  color: #8cd3ec;
+}
 .jumbotron {
-  background: url(img/jumbotron.jpg) no-repeat 50% 50%;
+  background: url(img/veliyil.jpg) no-repeat 50% 50%;
   width: 100%;
   background-size: cover;
   height: 100vh;
@@ -206,6 +230,7 @@ h4,
   text-decoration: none;
   color: #f1f1f1;
   font-size: 24px;
+  padding: 15px 40px;
 }
 .address i {
   float: none;
