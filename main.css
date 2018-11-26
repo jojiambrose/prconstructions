@@ -156,7 +156,11 @@ h4,
   font-size: 40px;
   animation: ani 1s infinite;
   -webkit-animation: ani 1s infinite;
-  color: #fff;
+  /* color: #fff; */
+  color: black;
+  -webkit-text-fill-color: white; /* Will override color (regardless of order) */
+  -webkit-text-stroke-width: 3px;
+  -webkit-text-stroke-color: #3ca8d3;
 }
 @keyframes ani {
   0% {
@@ -245,7 +249,7 @@ h4,
 footer {
   background-color: #2d2d30;
   color: #f5f5f5;
-  padding: 32px;
+  padding: 10px;
 }
 footer a {
   color: #f5f5f5;
