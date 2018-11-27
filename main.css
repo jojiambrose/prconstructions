@@ -234,6 +234,13 @@ h4,
   padding-top: 10px;
   padding-bottom: 10px;
 }
+#contact .glyphicon {
+  float: left;
+  margin: 6px;
+}
+#contact p {
+  display: inline-flex;
+}
 .floatl {
   float: right;
 }
@@ -273,9 +280,15 @@ footer a:hover {
 textarea {
   resize: none;
 }
+
+@media (max-width: 1200px) {
+  .container {
+    padding: 80px 20px;
+  }
+}
 @media (max-width: 990px) {
   .container {
-    padding: 80px 30px;
+    padding: 80px 10px;
   }
   .floatl {
     float: left;
@@ -283,7 +296,15 @@ textarea {
 }
 @media (max-width: 600px) {
   .container {
-    padding: 80px 60px;
+    padding: 80px 5px;
+  }
+  .mailbtn {
+    font-size: 20px;
+  }
+}
+@media (max-width: 600px) {
+  .container {
+    padding: 80px 10px;
   }
   .navbar {
     height: 50px;
