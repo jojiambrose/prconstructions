@@ -143,6 +143,9 @@ h4,
   font-size: 40px;
   color: #3ca8d3;
 }
+.navbar li a {
+  padding: 25px 10px;
+}
 .navbar li a,
 .navbar .navbar-brand {
   color: #d5d5d5 !important;
@@ -255,7 +258,6 @@ h4,
   display: inline-flex;
 }
 
-
 .mailbtn {
   text-decoration: none;
   color: #f1f1f1;
@@ -268,6 +270,9 @@ h4,
 }
 .address p {
   float: initial;
+}
+.floatl {
+  float: right;
 }
 
 footer {
@@ -314,7 +319,10 @@ textarea {
   .navbar-right {
     margin-right: 20px;
   }
- 
+  .floatl {
+    float: left;
+  }
+}
 @media (max-width: 860px) {
   .logo {
     padding-left: 40px;
@@ -329,6 +337,9 @@ textarea {
   }
   .navbar {
     height: auto;
+  }
+  .navbar li a {
+    padding: 10px 15px;
   }
   .logo {
     padding: 0;
