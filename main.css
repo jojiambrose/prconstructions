@@ -321,6 +321,7 @@ textarea {
   }
   .floatl {
     float: left;
+    padding-left: 25px;
   }
 }
 @media (max-width: 860px) {
