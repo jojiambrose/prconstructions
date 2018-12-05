@@ -254,9 +254,7 @@ h4,
 #contact p {
   display: inline-flex;
 }
-.floatl {
-  float: right;
-}
+
 
 .mailbtn {
   text-decoration: none;
@@ -316,10 +314,7 @@ textarea {
   .navbar-right {
     margin-right: 20px;
   }
-  .floatl {
-    float: left;
-  }
-}
+ 
 @media (max-width: 860px) {
   .logo {
     padding-left: 40px;
